@@ -1,3 +1,4 @@
+// Task Manager Header File
 #ifndef task_manager_h
 #define task_manager_h
 
@@ -28,9 +29,11 @@ typedef struct {
 } Task;
 
 
+Task create_task(int id, const char* description, Priority priority);
 
+int add_task(Task tasks[], int* task_count,Task new_task);
 
-
+int delete_task(Task tasks[], int* task_count, Priority priority);
 
 
 #endif
