@@ -59,3 +59,48 @@ void delete_interact_task(Task task[], int* task_count) {
 	int deleted = delete_task(task, task_count, (Priority)priority_int);
 	printf("Deleted %d tasks with priority %d.\n", deleted, priority_int);
 }
+
+
+
+int main(void) {
+	Task tasks[max_tasks];
+	int task_count = 0;
+	int next_id = 1;
+
+	int running = 1;
+
+	while (running) {
+		int choice;
+		printf("\n--------------Task Menu-----------------");
+		printf("1. Create a new task\n");
+		printf("2. Delete tasks by priority\n");
+		printf("3. Exit\n");
+		printf("Enter your choice: ");
+		scanf("%d", &choice);
+		while (getchar() != '\n');
+
+		switch (choice) {
+		case 1:
+			create_interact_task(tasks, &task_count, &next_id);
+			break;
+
+		case 2:
+			delete_interact_task(tasks, &task_count);
+			break;
+
+		case 3:
+			running = 0;
+			break;
+
+		default:
+			printf("Invalid choice. Please try again.\n");
+			break;
+
+		}
+
+	}
+
+	printf("Exiting Section 1......\n");
+	return 0;
+}
+
