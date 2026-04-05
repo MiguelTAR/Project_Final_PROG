@@ -1,21 +1,11 @@
 #include <stdio.h>
-#include "main.h"
-
-//definition of the dummyfunction. You can remove this function once the project works.
-int dummyFunction(int x, int y) {
-	return x + y;
-}
-
-//definition of functions here. E.g., 
-// int yourFunction(...){
-//		return INVALID_VALUE;
-// }
+#include <string.h>
+#include "Task_Manager.h"
 
 
+static void read(char* buffer, size_t size) {
+	if (fgets(buffer, (int)size, stdin) != NULL) {
+		size_t len = strlen(buffer);
+	}
 
-
-
-int main() {
-	printf("This is the course project\n");
-	return 0;
 }
