@@ -74,7 +74,9 @@ int main(void) {
 		printf("\n--------------Task Menu-----------------");
 		printf("1. Create a new task\n");
 		printf("2. Delete tasks by priority\n");
-		printf("3. Exit\n");
+		printf("3. Show incomplete tasks\n");
+		printf("4. Show all tasks\n");
+		printf("5. Continue / Exit\n");
 		printf("Enter your choice: ");
 		scanf("%d", &choice);
 		while (getchar() != '\n');
@@ -89,7 +91,15 @@ int main(void) {
 			break;
 
 		case 3:
-			running = 0;
+			display_incomplete_tasks(tasks, task_count);
+			break;
+
+		case 4:
+			display_all_tasks(tasks, task_count);
+			break;
+
+		case 5:
+			running = continue_or_exit();
 			break;
 
 		default:
