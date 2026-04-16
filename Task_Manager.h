@@ -36,10 +36,9 @@ int add_task(Task tasks[], int* task_count,Task new_task);
 int delete_task(Task tasks[], int* task_count, Priority priority);
 
 //section3 - april
-int delete_task(Task tasks[], int* task_count, Priority priority);
 void display_incomplete_tasks(Task tasks[], int task_count);
 void display_all_tasks(Task tasks[], int task_count);
-void continue_or_exit(Task tasks[], int task_count);
+int continue_or_exit();
 
 
 #endif
