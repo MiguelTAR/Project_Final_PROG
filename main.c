@@ -62,7 +62,7 @@ void delete_interact_task(Task task[], int* task_count) {
 
 
 
-int main(void) {
+   int main(void) {
 	Task tasks[max_tasks];
 	int task_count = 0;
 	int next_id = 1;
