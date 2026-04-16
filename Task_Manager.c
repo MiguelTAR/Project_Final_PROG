@@ -6,7 +6,7 @@ Task create_task(int id, const char* description, Priority priority) {
 	Task t;
 	t.id = id;
 	t.priority = priority;
-	t.satus = status_not_started;
+	t.status = status_not_started;
 
 	strncpy(t.description, description, sizeof(t.description) - 1);
 	t.description[sizeof(t.description) - 1] = '\0';
