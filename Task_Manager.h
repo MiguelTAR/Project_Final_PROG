@@ -17,8 +17,7 @@ typedef enum {
 
 typedef enum {
 	status_not_started = 0,
-	status_in_progress,
-	status_completed
+	status_completed = 1,
 }Status;
 
 typedef struct {
