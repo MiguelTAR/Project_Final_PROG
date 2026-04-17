@@ -25,7 +25,7 @@ typedef struct {
 	int id;
 	char description[150];
 	Priority priority;
-	Status satus;
+	Status status;
 } Task;
 
 

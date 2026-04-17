@@ -6,7 +6,7 @@ Task create_task(int id, const char* description, Priority priority) {
 	Task t;
 	t.id = id;
 	t.priority = priority;
-	t.satus = status_not_started;
+	t.status = status_not_started;
 
 	strncpy(t.description, description, sizeof(t.description) - 1);
 	t.description[sizeof(t.description) - 1] = '\0';
@@ -50,7 +50,7 @@ int delete_task(Task task[], int* task_count, Priority priority) {
 void display_incomplete_tasks(Task tasks[], int task_count) {       
     printf("\n--- Incomplete Tasks ---\n");
     for (int i = 0; i < task_count; i++) {
-        if (tasks[i].satus != status_completed) {
+        if (tasks[i].status != status_completed) {
             printf("ID: %d | Description: %s | Priority: %d\n",
                 tasks[i].id,
                 tasks[i].description,
@@ -67,7 +67,7 @@ void display_all_tasks(Task tasks[], int task_count) {
             tasks[i].id,
             tasks[i].description,
             tasks[i].priority,
-            tasks[i].satus);
+            tasks[i].status);
     }
 }
 

@@ -27,7 +27,7 @@ public:
         int task_count = 1;
         tasks[0].id = 1;
         tasks[0].priority = priority_1;
-        tasks[0].satus = status_completed;
+        tasks[0].status = status_completed;
         tasks[0].description[0] = '\0';
         display_incomplete_tasks(tasks, task_count);
         Assert::IsTrue(true);
@@ -38,7 +38,7 @@ public:
         int task_count = 1;
         tasks[0].id = 1;
         tasks[0].priority = priority_2;
-        tasks[0].satus = status_not_started;
+        tasks[0].status = status_not_started;
         tasks[0].description[0] = '\0';
         display_incomplete_tasks(tasks, task_count);
         Assert::IsTrue(true);
@@ -60,7 +60,7 @@ public:
         int task_count = 1;
         tasks[0].id = 1;
         tasks[0].priority = priority_3;
-        tasks[0].satus = status_in_progress;
+        tasks[0].status = status_in_progress;
         tasks[0].description[0] = '\0';
         display_all_tasks(tasks, task_count);
         Assert::IsTrue(true);
@@ -71,11 +71,10 @@ public:
         int task_count = 2;
         tasks[0].id = 1;
         tasks[0].priority = priority_1;
-        tasks[0].satus = status_not_started;
         tasks[0].description[0] = '\0';
         tasks[1].id = 2;
         tasks[1].priority = priority_2;
-        tasks[1].satus = status_completed;
+        tasks[1].status = status_completed;
         tasks[1].description[0] = '\0';
         display_all_tasks(tasks, task_count);
         Assert::IsTrue(true);
