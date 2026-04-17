@@ -79,6 +79,72 @@ int delete_tasks(Task task[], int* task_count, Priority priority) {
 
 }
 
+// Section 2
+
+// Shows all of the tasks currently in the list
+void display_tasks(Task tasks[], int task_count) {
+
+    printf("\n--- Updated Task List ---\n");
+
+    for (int i = 0; i < task_count; i++) {
+
+        printf("ID: %d | Description: %s | Priority: %d | Status: ",
+            tasks[i].id,
+            tasks[i].description,
+            tasks[i].priority);
+
+        if (tasks[i].satus == status_not_started) {
+            printf("NOT_STARTED\n");
+        }
+        else if (tasks[i].satus == status_completed) {
+            printf("COMPLETED\n");
+        }
+        else {
+            printf("IN_PROGRESS\n");
+        }
+    }
+}
+
+// Lets the user either filter tasks or type "Skip" to continue
+void search_filter_tasks(Task tasks[], int task_count, char Skip[], int priority, int status) {
+
+    // If the user typed Skip, do not filter anything
+    if (strcmp(Skip, "Skip") == 0) {
+        return;
+    }
+
+    printf("\n--- Filtered Tasks ---\n");
+
+    // Goes through the list and only shows the tasks that match
+    for (int i = 0; i < task_count; i++) {
+
+        if (tasks[i].priority == priority && tasks[i].satus == status) {
+
+            printf("ID: %d | Description: %s | Priority: %d\n",
+                tasks[i].id,
+                tasks[i].description,
+                tasks[i].priority);
+        }
+    }
+}
+
+
+// Finds the task with the matching ID and change the status to completed
+void mark_task_complete(Task tasks[], int task_count, int id) {
+
+    for (int i = 0; i < task_count; i++) {
+
+        if (tasks[i].id == id) {
+            tasks[i].satus = status_completed;
+            printf("\nTask %d has been marked as completed.\n", id);
+
+            return;
+        }
+    }
+
+    printf("\nTask ID not found.\n");
+}
+
 
 // section 3
 // show only tasks that are NOT completed
