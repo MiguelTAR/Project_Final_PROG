@@ -46,7 +46,7 @@ int delete_task(Task task[], int* task_count, Priority priority) {
 
 // Section 2
 
-// Show all of the tasks currently in the list
+// Shows all of the tasks currently in the list
 void display_tasks(Task tasks[], int task_count) {
 
     printf("\n--- Updated Task List ---\n");
@@ -70,7 +70,7 @@ void display_tasks(Task tasks[], int task_count) {
     }
 }
 
-// Let the user either filter tasks or type "Skip" to continue
+// Lets the user either filter tasks or type "Skip" to continue
 void search_filter_tasks(Task tasks[], int task_count, char Skip[], int priority, int status) {
 
     // If the user typed Skip, do not filter anything
@@ -80,7 +80,7 @@ void search_filter_tasks(Task tasks[], int task_count, char Skip[], int priority
 
     printf("\n--- Filtered Tasks ---\n");
 
-    // Go through the list and only show the tasks that match
+    // Goes through the list and only shows the tasks that match
     for (int i = 0; i < task_count; i++) {
 
         if (tasks[i].priority == priority && tasks[i].satus == status) {
@@ -94,7 +94,7 @@ void search_filter_tasks(Task tasks[], int task_count, char Skip[], int priority
 }
 
 
-// Find the task with the matching ID and change the status to completed
+// Finds the task with the matching ID and change the status to completed
 void mark_task_complete(Task tasks[], int task_count, int id) {
 
     for (int i = 0; i < task_count; i++) {
