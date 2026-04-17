@@ -34,14 +34,13 @@ Task create_task(int id, const char* description, Priority priority);
 
 int add_task(Task tasks[], int* task_count,Task new_task);
 
-int delete_task(Task tasks[], int* task_count, Priority priority);
+int delete_tasks(Task tasks[], int* task_count, Priority priority);
 
 
 //---------Section 2 - Naomi and Rachael-----------------
 void display_tasks(const Task tasks[], int task_count);
 
-void search_filter_tasks(Task tasks[], int task_count, 
-		int Skip[], Priority priority, Status status);
+void search_filter_tasks(Task tasks[], int task_count, char Skip[]);
 
 int mark_task_complete(Task tasks[], int task_count, int id);
 
