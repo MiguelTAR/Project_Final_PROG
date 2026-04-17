@@ -93,10 +93,10 @@ void display_tasks(Task tasks[], int task_count) {
             tasks[i].description,
             tasks[i].priority);
 
-        if (tasks[i].satus == status_not_started) {
+        if (tasks[i].status == status_not_started) {
             printf("NOT_STARTED\n");
         }
-        else if (tasks[i].satus == status_completed) {
+        else if (tasks[i].status == status_completed) {
             printf("COMPLETED\n");
         }
         else {
@@ -118,7 +118,7 @@ void search_filter_tasks(Task tasks[], int task_count, char Skip[], int priority
     // Goes through the list and only shows the tasks that match
     for (int i = 0; i < task_count; i++) {
 
-        if (tasks[i].priority == priority && tasks[i].satus == status) {
+        if (tasks[i].priority == priority && tasks[i].status == status) {
 
             printf("ID: %d | Description: %s | Priority: %d\n",
                 tasks[i].id,
@@ -135,7 +135,7 @@ void mark_task_complete(Task tasks[], int task_count, int id) {
     for (int i = 0; i < task_count; i++) {
 
         if (tasks[i].id == id) {
-            tasks[i].satus = status_completed;
+            tasks[i].status = status_completed;
             printf("\nTask %d has been marked as completed.\n", id);
 
             return;
@@ -154,7 +154,6 @@ void display_incomplete_tasks(Task tasks[], int task_count) {
     printf("\n--- Incomplete Tasks ---\n");
     for (int i = 0; i < task_count; i++) {
         if (tasks[i].status != status_completed) {
-			//found = 1;
             printf("ID: %d | Description: %s | Priority: %d\n",
                 tasks[i].id,
                 tasks[i].description,
