@@ -12,13 +12,12 @@ typedef enum {
 	priority_2,
 	priority_3,
 	priority_4, 
-	priority_5 
+	priority_5
 } Priority;
 
 typedef enum {
 	status_not_started = 0,
-	status_in_progress,
-	status_completed
+	status_completed = 1,
 }Status;
 
 typedef struct {
@@ -29,16 +28,29 @@ typedef struct {
 } Task;
 
 
+//---------Section 1 - Miguel-----------------
+
 Task create_task(int id, const char* description, Priority priority);
 
 int add_task(Task tasks[], int* task_count,Task new_task);
 
-int delete_task(Task tasks[], int* task_count, Priority priority);
+int delete_tasks(Task tasks[], int* task_count, Priority priority);
 
-//section3 - april
+
+//---------Section 2 - Naomi and Rachael-----------------
+void display_tasks(const Task tasks[], int task_count);
+
+void search_filter_tasks(Task tasks[], int task_count, char Skip[]);
+
+int mark_task_complete(Task tasks[], int task_count, int id);
+
+
+//---------Section 3 - April-----------------
 void display_incomplete_tasks(Task tasks[], int task_count);
+
 void display_all_tasks(Task tasks[], int task_count);
-int continue_or_exit();
+
+int continue_or_exit(void);
 
 
 #endif
